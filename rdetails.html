@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>User Details</title>
+<script>
+function test() 
+{
+  
+    document.getElementById("rdetails").innerHTML = "The details entered by the user<br>";
+    
+    var fname=localStorage.getItem("fname");
+    document.getElementById("rdetails").innerHTML += "fname: <b>"+fname+"</b><br>";
+    var lname=localStorage.getItem("lname");
+    document.getElementById("rdetails").innerHTML += "lname: <b>"+lname+"</b><br>";
+    var phonenumber=localStorage.getItem("phonenumber");
+    document.getElementById("rdetails").innerHTML += "phonenumber: <b>"+phonenumber+"</b><br>";
+    var password=localStorage.getItem("password");
+    document.getElementById("rdetails").innerHTML += "password: <b>"+password+"</b><br>";
+    var email=localStorage.getItem("email");
+    document.getElementById("rdetails").innerHTML += "email: <b>"+email+"</b><br>";
+    var gender=localStorage.getItem("gender");
+    document.getElementById("rdetails").innerHTML += "gender: <b>"+gender+"</b><br>";
+}
+
+   
+</script>
+</head>
+
+<body onload="test()">
+    <p id="rdetails"></p>
+</body>
+</html>
