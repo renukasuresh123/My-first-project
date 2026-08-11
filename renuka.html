@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>Registration Form</title>
+
+<style>
+body{
+    background-color:lightpink;
+}
+table{
+    border-collapse:collapse;
+    background-color:white;
+}
+td{
+    padding:8px;
+}
+.coloring{
+    background-color:blue;
+    color:white;
+    padding:8px 15px;
+    border:none;
+    cursor:pointer;
+}
+</style>
+
+<script>
+function test()
+{
+    var fname = document.getElementById("fname").value;
+    localStorage.setItem("fname", fname);
+
+    var res = fname.match(/[A-Za-z]{3,15}/);
+    if(!res)
+    {
+        alert("Enter valid First Name");
+        return false;
+    }
+
+  
+    var lname = document.getElementById("lname").value;
+    localStorage.setItem("lname", lname);
+
+    res = lname.match(/[A-Za-z]{3,15}/);
+    if(!res)
+    {
+        alert("Enter valid Last Name");
+        return false;
+    }
+
+   
+    var phonenumber = document.getElementById("phonenumber").value;
+    localStorage.setItem("phonenumber", phonenumber);
+
+    res = phonenumber.match(/[6-9][0-9]{9}/);
+    if(!res)
+    {
+        alert("Enter valid Phone Number");
+        return false;
+    }
+
+    var password = document.getElementById("password").value;
+    localStorage.setItem("password", password);
+
+    res = password.match(/[A-Za-z0-9]{6,10}/);
+    if(!res)
+    {
+        alert("Enter valid password");
+        return false;
+    }
+
+    var email = document.getElementById("email").value;
+    localStorage.setItem("email", email);
+
+    res = email.match(/[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]{2,}/);
+    if(!res)
+    {
+        alert("Enter valid Email");
+        return false;
+    }
+
+   
+    var gender = document.getElementById('input[name="gender"]:checked').value;
+    localStorage.setItem("gender", gender);
+
+    alert("Registration Successful!");
+
+    return true;
+}
+</script>
+</head>
+<body>
+<center>
+<form action="rdetails.html" onsubmit="return test();">
+<table border="1">
+<tr>
+<td>First Name</td>
+<td><input type="text" id="fname" name="fname"></td>
+</tr>
+
+<tr>
+<td>Last Name</td>
+<td><input type="text" id="lname" name="lname"></td>
+</tr>
+
+<tr>
+<td>Phone Number</td>
+<td><input type="tel" id="phonenumber" name="phonenumber"></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" id="password" name="password"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="email" id="email" name="email"></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender" value="Male" checked> Male
+<input type="radio" name="gender" value="Female"> Female
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input class="coloring" type="submit" value="Submit">
+</td>
+</tr>
+
+</table>
+</form>
+</center>
+</body>
+</html>
